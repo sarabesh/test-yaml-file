@@ -1,0 +1,10 @@
+app:
+  host: hello-world.dev.admin.aws.vmn.io
+## testing error $
+## $
+showcase:
+  per_env:
+    env_merged: default in app # this will be overriden in the env
+    env_name: ${env.PROMOTION_ENV_NAME} # this expression coming from Jarvis
+    directly_set: ${env.PROMOTION_ENV_NAME in ["dev", "qa"] ? "nonprod" : "prod"} # another expression example
+    # directly_set: ${env.PROMOTION_ENV_NAME == "dev" ? "dev" : "nondev"} # any groovy/java expression is valid
